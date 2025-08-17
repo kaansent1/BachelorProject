@@ -1,0 +1,23 @@
+.TimerContainer {
+  padding: 16px;
+  text-align: center;
+}
+
+.ExerciseInfo {
+  margin: 16px 0;
+}
+
+.TimerDisplay {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.TimerActions button,
+.NavActions button {
+  padding: 8px 16px;
+  margin: 4px;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+}

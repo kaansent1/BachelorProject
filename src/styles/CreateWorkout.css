@@ -1,0 +1,49 @@
+.CreateContainer {
+  padding: 16px;
+}
+
+.TextInput {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.ExerciseList {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.ExerciseItem {
+  display: flex;
+  justify-content: space-between;
+  background: #f3f4f6;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.ExerciseItem.Selected {
+  background: #bfdbfe;
+}
+
+.Actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SaveBtn {
+  background: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.CancelBtn {
+  background: #9ca3af;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+}

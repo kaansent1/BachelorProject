@@ -1,0 +1,66 @@
+.Dashboard {
+  padding: 16px;
+}
+
+.Title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.EmptyText {
+  color: #888;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.WorkoutCard {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.CardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.WorkoutName {
+  font-weight: bold;
+}
+
+.WorkoutDuration {
+  font-size: 12px;
+  color: #666;
+}
+
+.CardActions {
+  display: flex;
+  gap: 8px;
+}
+
+.StartBtn {
+  background: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.DeleteBtn {
+  background: #ef4444;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.AddBtn {
+  background: #22c55e;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
