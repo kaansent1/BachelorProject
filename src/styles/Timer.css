@@ -1,23 +1,118 @@
 .TimerContainer {
-  padding: 16px;
+  padding: 20px;
   text-align: center;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.ProgressContainer {
+  margin: 20px 0;
+}
+
+.ProgressText {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.ProgressBar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ProgressFill {
+  height: 100%;
+  background: #22c55e;
+  transition: width 0.3s ease;
 }
 
 .ExerciseInfo {
-  margin: 16px 0;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ExerciseName {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.ExerciseDuration, .ExerciseCategory {
+  color: #6b7280;
+  margin-bottom: 4px;
 }
 
 .TimerDisplay {
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
-  margin: 16px 0;
+  color: #1f2937;
+  margin: 30px 0;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.TimerActions button,
-.NavActions button {
-  padding: 8px 16px;
-  margin: 4px;
-  border-radius: 6px;
+.TimerActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.TimerBtn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 100px;
+}
+
+.TimerBtn.Start {
+  background: #22c55e;
+  color: white;
+}
+
+.TimerBtn.Pause {
+  background: #f59e0b;
+  color: white;
+}
+
+.TimerBtn.Reset {
+  background: #ef4444;
+  color: white;
+}
+
+.NavActions {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.NavBtn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.NavBtn.Cancel {
+  background: #6b7280;
+  color: white;
+}
+
+.NavBtn.Next {
   background: #2563eb;
   color: white;
 }

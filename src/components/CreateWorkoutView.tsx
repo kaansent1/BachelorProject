@@ -1,5 +1,5 @@
 import { useState } from "@lynx-js/react";
-import type { Exercise } from "../data/exercises.js";
+import type { Exercise } from "../data/exercises.tsx";
 import "../styles/CreateWorkout.css";
 
 interface CreateWorkoutProps {
@@ -40,6 +40,12 @@ export function CreateWorkoutView({
     setActiveView("dashboard");
   };
 
+  const filteredExercises = exercises.filter((ex) => {
+    const matchesSearch = ex.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = filterCategory === "all" || ex.category === filterCategory;
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <scroll-view className="CreateContainer">
       <text className="Title">Workout erstellen</text>
@@ -58,34 +64,45 @@ export function CreateWorkoutView({
         bindinput={(e: any) => setSearchTerm(e.detail.value)}
       />
 
+      <view className="FilterContainer">
+        {exerciseCategories.map((category) => (
+          <view
+            key={category}
+            className={filterCategory === category ? "FilterBtn Active" : "FilterBtn"}
+            bindtap={() => setFilterCategory(category)}
+          >
+            <text>{category}</text>
+          </view>
+        ))}
+      </view>
+
       <scroll-view className="ExerciseList">
-        {exercises
-          .filter((ex) =>
-            ex.name.toLowerCase().includes(searchTerm.toLowerCase())
-          )
-          .map((ex) => (
-            <view
-              key={ex.id}
-              className={
-                selectedExercises.find((s) => s.id === ex.id)
-                  ? "ExerciseItem Selected"
-                  : "ExerciseItem"
-              }
-              bindtap={() => toggleExercise(ex)}
-            >
-              <text>{ex.name}</text>
-              <text>{ex.duration} min</text>
+        {filteredExercises.map((ex) => (
+          <view
+            key={ex.id}
+            className={
+              selectedExercises.find((s) => s.id === ex.id)
+                ? "ExerciseItem Selected"
+                : "ExerciseItem"
+            }
+            bindtap={() => toggleExercise(ex)}
+          >
+            <view className="ExerciseInfo">
+              <text className="ExerciseName">{ex.name}</text>
+              <text className="ExerciseCategory">({ex.category})</text>
             </view>
-          ))}
+            <text className="ExerciseDuration">{ex.duration} min</text>
+          </view>
+        ))}
       </scroll-view>
 
       <view className="Actions">
-        <button className="SaveBtn" bindtap={handleSave}>
-          Speichern
-        </button>
-        <button className="CancelBtn" bindtap={() => setActiveView("dashboard")}>
-          Abbrechen
-        </button>
+        <view className="SaveBtn" bindtap={handleSave}>
+          <text>Speichern</text>
+        </view>
+        <view className="CancelBtn" bindtap={() => setActiveView("dashboard")}>
+          <text>Abbrechen</text>
+        </view>
       </view>
     </scroll-view>
   );

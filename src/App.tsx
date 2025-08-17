@@ -1,7 +1,7 @@
 import { useState, useEffect } from "@lynx-js/react";
 import type { Exercise, Workout } from "./data/exercises.jsx";
-import { defaultExercises, exerciseCategories } from "./data/exercises.js";
-import { NavigationBar } from "./components/NavigationBar.js";
+import { defaultExercises, exerciseCategories } from "./data/exercises.jsx";
+import { NavigationBar } from "./components/NavigationBar.jsx";
 import { DashboardView } from "./components/DashboardView.jsx";
 import { CreateWorkoutView } from "./components/CreateWorkoutView.jsx";
 import { TimerView } from "./components/TimerView.jsx";
@@ -65,7 +65,7 @@ const [exercises, setExercises] = useState<Exercise[]>(defaultExercises);
   };
 
   return (
-    <div className="AppContainer">
+    <view className="AppContainer">
       <NavigationBar activeView={activeView} setActiveView={setActiveView} />
 
       {activeView === "dashboard" && (
@@ -109,6 +109,6 @@ const [exercises, setExercises] = useState<Exercise[]>(defaultExercises);
       {activeView === "statistics" && (
         <StatisticsView workouts={workouts} />
       )}
-    </div>
+    </view>
   );
 }

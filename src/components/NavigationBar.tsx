@@ -9,29 +9,29 @@ interface NavigationProps {
 export function NavigationBar({ activeView, setActiveView }: NavigationProps) {
   return (
     <view className="NavBar">
-      <button
+      <view
         className={activeView === "dashboard" ? "NavBtn Active" : "NavBtn"}
         bindtap={() => setActiveView("dashboard")}
       >
         <Home size={20} />
         <text>Home</text>
-      </button>
+      </view>
 
-      <button
+      <view
         className={activeView === "create" ? "NavBtn Active" : "NavBtn"}
         bindtap={() => setActiveView("create")}
       >
         <Plus size={20} />
         <text>Create</text>
-      </button>
+      </view>
 
-      <button
+      <view
         className={activeView === "statistics" ? "NavBtn Active" : "NavBtn"}
         bindtap={() => setActiveView("statistics")}
       >
         <BarChart size={20} />
         <text>Stats</text>
-      </button>
+      </view>
     </view>
   );
 }

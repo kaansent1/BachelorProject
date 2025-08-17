@@ -64,3 +64,17 @@
   border-radius: 6px;
   margin-top: 16px;
 }
+
+.RunningInfo {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.RunningInfo text {
+  color: #92400e;
+  font-weight: 600;
+}

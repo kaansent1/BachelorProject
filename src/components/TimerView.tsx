@@ -1,5 +1,5 @@
 import { useEffect } from "@lynx-js/react";
-import type { Workout } from "../data/exercises.js";
+import type { Workout } from "../data/exercises.tsx";
 import "../styles/Timer.css";
 
 interface TimerProps {

@@ -1,4 +1,4 @@
-import type { Workout } from "../data/exercises.js";
+import type { Workout } from "../data/exercises.tsx";
 import "../styles/Statistics.css";
 
 interface StatsProps {

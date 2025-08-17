@@ -1,4 +1,4 @@
-import type { Workout, Exercise } from "../data/exercises.js";
+import type { Workout, Exercise } from "../data/exercises.tsx";
 import "../styles/Dashboard.css";
 
 interface DashboardProps {
@@ -37,12 +37,12 @@ export function DashboardView({
               <text className="WorkoutDuration">{w.duration} min</text>
             </view>
             <view className="CardActions">
-              <button className="StartBtn" bindtap={() => startWorkout(w)}>
-                Start
-              </button>
-              <button className="DeleteBtn" bindtap={() => deleteWorkout(w.id)}>
-                Löschen
-              </button>
+              <view className="StartBtn" bindtap={() => startWorkout(w)}>
+                <text>Start</text>
+              </view>
+              <view className="DeleteBtn" bindtap={() => deleteWorkout(w.id)}>
+                <text>Löschen</text>
+              </view>
             </view>
           </view>
         ))
